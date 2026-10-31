@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy — Agos LLC</title>
+<meta content="How Agos LLC handles information in TACH, Fingularity, Everyday Counter, and on agosllc.com." name="description"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://www.agosllc.com/privacy/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="AGOS LLC" property="og:site_name"/>
+<meta content="https://www.agosllc.com/privacy/" property="og:url"/>
+<meta content="Privacy Policy — AGOS LLC" property="og:title"/>
+<meta content="How AGOS LLC handles personal information across its sites and apps." property="og:description"/>
+<meta content="https://www.agosllc.com/assets/hero.jpg" property="og:image"/>
+<meta content="1920" property="og:image:width"/>
+<meta content="1081" property="og:image:height"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://www.agosllc.com/assets/hero.jpg" name="twitter:image"/>
+<link href="/assets/analytics/consent-v1.css" rel="stylesheet"/>
+<script defer="" src="/assets/analytics/consent-v1.js"></script>
+<link href="/assets/refresh/contact-header-v2.css" rel="stylesheet"/>
+<link href="/assets/launch/studio-20261018.css" rel="stylesheet"/>
+<style>
+    :root {
+      --bg:#050915;
+      --bg2:#081225;
+      --panel:rgba(12,25,48,.72);
+      --panel-strong:#0c1730;
+      --line:rgba(170,207,255,.15);
+      --line-strong:rgba(170,207,255,.28);
+      --text:#f6f9ff;
+      --muted:#aab8cf;
+      --soft:#73839d;
+      --blue:#58a6ff;
+      --cyan:#61e6ff;
+      --purple:#ad85ff;
+      --warm:#ffb168;
+      --green:#75e5b4;
+      --max:1240px;
+      --radius:24px;
+      --shadow:0 24px 80px rgba(0,0,0,.34);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      font-family:"Sora",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 12% 12%,rgba(64,131,255,.14),transparent 28rem),
+        radial-gradient(circle at 92% 40%,rgba(161,89,255,.10),transparent 26rem),
+        var(--bg);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    button,input{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#9ec9ff;
+    }
+    .eyebrow::before{content:"";width:28px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent)}
+    .section-title{margin:14px 0 14px;font-size:clamp(2rem,4.2vw,4rem);line-height:1.02;letter-spacing:-.055em;max-width:850px}
+    .section-copy{margin:0;color:var(--muted);font-size:clamp(1rem,1.5vw,1.12rem);max-width:720px}
+    .button{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:48px;padding:0 19px;border-radius:999px;text-decoration:none;font-weight:650;font-size:.9rem;
+      border:1px solid transparent;transition:transform .2s,border-color .2s,background .2s,color .2s;
+    }
+    .button:hover{transform:translateY(-2px)}
+    .button.primary{background:linear-gradient(135deg,#d7ecff,#76c5ff);color:#07101d;box-shadow:0 10px 30px rgba(88,166,255,.22)}
+    .button.ghost{border-color:var(--line-strong);background:rgba(6,14,30,.48);backdrop-filter:blur(12px);color:#eaf3ff}
+    .button.ghost:hover{background:rgba(18,36,66,.72);border-color:rgba(172,211,255,.45)}
+
+    /* Header */
+    header{
+      position:fixed;z-index:50;top:0;left:0;right:0;
+      background:linear-gradient(180deg,rgba(3,7,16,.88),rgba(3,7,16,.45),transparent);
+      backdrop-filter:blur(3px);
+    }
+    .nav{
+      min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:26px;
+    }
+    .brand{display:flex;align-items:center;text-decoration:none;min-width:155px}
+    .brand img{width:148px;height:auto;opacity:.95}
+    .links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
+    .links a{text-decoration:none;color:#c3cee0;font-size:.86rem;font-weight:550;transition:color .18s}
+    .links a:hover{color:white}
+    .nav-right{display:flex;align-items:center;gap:12px}
+    .menu{display:none;background:rgba(7,15,30,.7);color:#fff;border:1px solid var(--line-strong);border-radius:999px;padding:9px 14px}
+
+    /* Hero */
+    .hero{position:relative;min-height:820px;height:100svh;max-height:980px;display:flex;align-items:center;isolation:isolate;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;z-index:-3;background:url('/assets/hero.jpg') center center / cover no-repeat;transform:scale(1.015)}
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:-2;
+      background:
+        linear-gradient(90deg,rgba(2,7,17,.88) 0%,rgba(2,7,17,.72) 28%,rgba(2,7,17,.22) 60%,rgba(2,7,17,.02) 100%),
+        linear-gradient(180deg,rgba(2,7,17,.45) 0%,transparent 22%,transparent 70%,#050915 100%);
+    }
+    .hero::after{content:"";position:absolute;inset:auto 0 0;height:160px;z-index:-1;background:linear-gradient(180deg,transparent,var(--bg))}
+    .hero-content{padding-top:80px;width:min(690px,62vw)}
+    .hero h1{font-size:clamp(3.2rem,7vw,6.7rem);line-height:.93;letter-spacing:-.065em;margin:22px 0 24px;font-weight:650;text-wrap:balance}
+    .hero h1 span{display:block;color:#b9d8ff}
+    .hero p{font-size:clamp(1.05rem,1.6vw,1.25rem);color:#c2cde0;max-width:610px;margin:0 0 30px;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-note{margin-top:28px;display:flex;align-items:center;gap:12px;color:#97a9c3;font-size:.79rem;letter-spacing:.04em}
+    .hero-note::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px var(--cyan)}
+    .scroll-note{position:absolute;bottom:42px;left:50%;transform:translateX(-50%);font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:rgba(217,231,255,.55)}
+
+    /* Company intro */
+    .intro{padding:105px 0 75px;position:relative}
+    .intro-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+    .intro-stat{border-left:1px solid var(--line);padding-left:24px;color:var(--soft);font-size:.84rem;text-transform:uppercase;letter-spacing:.12em;line-height:1.9}
+    .intro-stat strong{display:block;color:#eef6ff;font-size:1.05rem;letter-spacing:0;text-transform:none;margin-bottom:4px}
+    .intro h2{font-size:clamp(2.4rem,5vw,4.9rem);line-height:1.01;letter-spacing:-.055em;margin:0 0 24px}
+    .intro p{color:var(--muted);font-size:1.05rem;max-width:760px;margin:0}
+    .intro p+p{margin-top:16px}
+
+    /* Universe */
+    .universe{padding:90px 0 110px;position:relative}
+    .universe::before{
+      content:"";position:absolute;left:50%;top:40px;width:min(1000px,90vw);height:520px;transform:translateX(-50%);border:1px solid rgba(101,159,240,.08);border-radius:50%;filter:blur(.2px);pointer-events:none;
+    }
+    .universe-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:42px}
+    .universe-head .section-copy{max-width:530px}
+    .brand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .brand-card{
+      position:relative;overflow:hidden;min-height:420px;padding:30px;border:1px solid var(--line);border-radius:var(--radius);
+      background:linear-gradient(160deg,rgba(17,35,67,.82),rgba(8,17,35,.74));text-decoration:none;box-shadow:var(--shadow);
+      transition:transform .28s ease,border-color .28s ease;
+    }
+    .brand-card:hover{transform:translateY(-7px);border-color:var(--accent)}
+    .brand-card::before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;right:-85px;top:-90px;background:radial-gradient(circle,var(--glow),transparent 70%);opacity:.55}
+    .brand-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(1,6,16,.48));pointer-events:none}
+    .brand-card > *{position:relative;z-index:1}
+    .brand-card .orb{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;margin-bottom:88px;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);background:color-mix(in srgb,var(--accent) 11%,transparent);box-shadow:inset 0 0 24px color-mix(in srgb,var(--accent) 12%,transparent),0 0 34px color-mix(in srgb,var(--accent) 9%,transparent)}
+    .brand-card .orb svg{width:28px;height:28px;stroke:var(--accent)}
+    .brand-card .mini{font-size:.67rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+    .brand-card h3{font-size:1.65rem;letter-spacing:-.035em;margin:9px 0 10px}
+    .brand-card p{color:#aebcd1;margin:0 0 24px;font-size:.94rem}
+    .brand-card .arrow{position:absolute;left:30px;bottom:28px;font-weight:700;font-size:.85rem;color:#e8f3ff}
+    .brand-card.sinigang{--accent:#ffb46c;--glow:rgba(255,139,55,.38)}
+    .brand-card.forge{--accent:#7ab7ff;--glow:rgba(64,145,255,.42)}
+    .brand-card.keep{--accent:#7ce5b6;--glow:rgba(78,214,155,.34)}
+
+    /* Products */
+    .products{padding:105px 0;background:linear-gradient(180deg,rgba(7,17,35,.3),rgba(8,19,39,.78),rgba(5,9,21,.95));border-block:1px solid var(--line)}
+    .products-head{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:end;margin-bottom:42px}
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#091429;transition:transform .25s,border-color .25s}
+    .product-card:hover{transform:translateY(-5px);border-color:var(--line-strong)}
+    .product-image{aspect-ratio:16/10;overflow:hidden;background:#0c1730}
+    .product-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .product-card:hover .product-image img{transform:scale(1.035)}
+    .product-body{padding:24px}
+    .product-brand{font-size:.65rem;text-transform:uppercase;letter-spacing:.14em;color:#7fa8d8;font-weight:700}
+    .product-body h3{font-size:1.4rem;letter-spacing:-.03em;margin:8px 0}
+    .product-body p{color:var(--muted);font-size:.91rem;margin:0 0 20px;min-height:68px}
+    .product-link{display:inline-flex;gap:8px;align-items:center;color:#d9ebff;text-decoration:none;font-size:.82rem;font-weight:650}
+    .product-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+    .chip{padding:6px 9px;border:1px solid var(--line);border-radius:999px;color:#8395b1;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em}
+
+    /* TACH preview */
+    .tach-preview{padding:105px 0 115px;background:radial-gradient(circle at 50% 18%,rgba(40,127,255,.13),transparent 40%),#050b18;border-bottom:1px solid var(--line)}
+    .tach-preview-shell{border:1px solid var(--line-strong);border-radius:32px;padding:clamp(28px,4vw,44px);background:linear-gradient(180deg,rgba(10,18,34,.92),rgba(6,12,24,.98));box-shadow:var(--shadow)}
+    .tach-preview-head{display:grid;grid-template-columns:1fr;gap:14px;align-items:start;margin-bottom:36px;max-width:860px}
+    .tach-preview-copy{color:var(--muted);max-width:760px;margin:0;font-size:.98rem;line-height:1.72}
+    .tach-shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+    .tach-shot{display:flex;flex-direction:column;border:1px solid rgba(145,188,245,.14);border-radius:28px;background:linear-gradient(180deg,rgba(11,20,38,.96),rgba(6,12,24,.98));padding:18px;box-shadow:0 24px 64px rgba(0,0,0,.24)}
+    .tach-shot-media{padding:12px;border:1px solid rgba(145,188,245,.12);border-radius:22px;background:radial-gradient(circle at 50% 0%,rgba(45,127,255,.10),transparent 55%),#08111f}
+    .tach-shot img{display:block;width:100%;height:auto;border-radius:16px;background:#050b18}
+    .tach-shot figcaption{padding:18px 6px 6px}
+    .tach-label{display:inline-flex;align-items:center;padding:7px 10px;border:1px solid rgba(145,188,245,.18);border-radius:999px;color:#8fb3df;font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:12px}
+    .tach-shot figcaption h3{margin:0 0 8px;font-size:1.08rem;letter-spacing:-.02em}
+    .tach-shot figcaption p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.62}
+
+    /* Build */
+    .build{padding:115px 0}
+    .build-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+    .principles{display:grid;gap:0;border-top:1px solid var(--line)}
+    .principle{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:28px 0;border-bottom:1px solid var(--line)}
+    .num{font-size:.72rem;color:#5f7698;padding-top:4px}
+    .principle h3{margin:0 0 6px;font-size:1.15rem}
+    .principle p{margin:0;color:var(--muted);font-size:.92rem}
+
+    /* AGOS meaning */
+    .meaning{padding:30px 0 110px}
+    .meaning-card{
+      position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;gap:45px;padding:clamp(32px,5vw,64px);border-radius:30px;border:1px solid var(--line-strong);background:linear-gradient(135deg,rgba(14,34,65,.9),rgba(8,18,38,.9));box-shadow:var(--shadow)
+    }
+    .meaning-card::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-240px;top:-210px;border:1px solid rgba(105,185,255,.17);box-shadow:0 0 90px rgba(65,143,255,.10),inset 0 0 90px rgba(80,155,255,.08)}
+    .meaning-card h2{font-size:clamp(2.2rem,4.8vw,4.5rem);letter-spacing:-.055em;line-height:.98;margin:15px 0 20px}
+    .meaning-card p{color:#b4c3d8;max-width:700px;margin:0}
+    .meaning-aside{align-self:end;padding-left:30px;border-left:1px solid var(--line);position:relative}
+    .meaning-aside strong{display:block;font-size:1.5rem;letter-spacing:-.04em;margin-bottom:8px}
+    .meaning-aside span{color:var(--soft);font-size:.86rem}
+
+    /* Closing */
+    .closing{padding:90px 0 105px;text-align:center}
+    .closing .eyebrow{justify-content:center}
+    .closing h2{font-size:clamp(2.4rem,5.5vw,5.3rem);letter-spacing:-.06em;line-height:.96;margin:18px auto 22px;max-width:900px}
+    .closing p{color:var(--muted);max-width:650px;margin:0 auto 28px}
+    .closing-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+    footer{border-top:1px solid var(--line);padding:42px 0 36px;color:#8291a9;background:#040812}
+    .footer-grid{display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:35px}
+    .footer-brand img{width:126px;opacity:.88;margin-bottom:14px;height:auto;max-width:100%;}
+    .footer-brand p{font-size:.8rem;color:#697b96;max-width:260px;margin:0}
+    footer h4{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:#8297b7;margin:0 0 13px}
+    footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+    footer a{text-decoration:none;color:#9aa9bf;font-size:.82rem}
+    footer a:hover{color:white}
+    .legal{border-top:1px solid rgba(170,207,255,.09);margin-top:35px;padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#62728b;font-size:.74rem}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:980px){
+      .hero{min-height:760px;height:90svh}
+      .hero-content{width:min(680px,80vw)}
+      .hero::before{background:linear-gradient(90deg,rgba(2,7,17,.88) 0%,rgba(2,7,17,.64) 55%,rgba(2,7,17,.15) 100%),linear-gradient(180deg,rgba(2,7,17,.4),transparent 45%,#050915)}
+      .intro-grid,.build-grid,.meaning-card,.products-head{grid-template-columns:1fr;gap:32px}
+      .brand-grid,.product-grid{grid-template-columns:1fr}
+      .brand-card{min-height:330px}
+      .brand-card .orb{margin-bottom:65px}
+      .product-body p{min-height:auto}
+      .universe-head{display:block}.universe-head .section-copy{margin-top:18px}
+
+      .tach-preview-shell{padding:24px}
+      .tach-preview-head{gap:16px;margin-bottom:26px}
+      .tach-shot-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .meaning-aside{padding-left:0;padding-top:24px;border-left:0;border-top:1px solid var(--line)}
+    }
+    @media(max-width:760px){
+      .wrap{width:min(var(--max),calc(100% - 28px))}
+      .links,.nav-right .button{display:none}
+      .menu{display:block}
+      .nav.open .links{display:flex;position:absolute;left:14px;right:14px;top:72px;flex-direction:column;align-items:stretch;gap:4px;padding:13px;border:1px solid var(--line-strong);border-radius:18px;background:rgba(5,12,25,.96);box-shadow:0 18px 60px rgba(0,0,0,.4)}
+      .nav.open .links a{display:block;padding:11px 12px}
+      .brand img{width:132px}
+      .hero{height:88svh;min-height:700px;align-items:flex-end;padding-bottom:100px}
+      .hero-bg{background-position:58% center}
+      .hero::before{background:linear-gradient(180deg,rgba(2,7,17,.28) 0%,rgba(2,7,17,.24) 24%,rgba(2,7,17,.70) 56%,#050915 100%)}
+      .hero-content{width:100%;padding-top:120px}
+      .hero h1{font-size:clamp(2.85rem,14vw,5rem);max-width:640px}
+      .hero p{font-size:1rem;max-width:520px}
+      .scroll-note{display:none}
+      .intro{padding-top:80px}
+      .universe,.products,.build{padding-block:80px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:520px){
+      .footer-grid{grid-template-columns:1fr}
+      .hero-actions .button{width:100%}
+      .brand-card{padding:24px}
+      .brand-card .arrow{left:24px}
+      .principle{grid-template-columns:38px 1fr}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button,.brand-card,.product-card,.product-image img{transition:none}
+    }
+  @media(min-width:761px) and (max-width:980px){.links{gap:18px}.nav-right .button{display:none}}
+</style><style>
+/* Privacy page: use the homepage's design system and unified footer. */
+body {font-family:"Sora",system-ui,-apple-system,sans-serif;}
+.page-band {width:min(1240px,calc(100% - 40px));margin:42px auto 0;padding:58px clamp(24px,5vw,70px);background:linear-gradient(90deg,rgba(3,10,26,.89) 0%,rgba(3,10,26,.67) 47%,rgba(3,10,26,.18) 100%),url('/assets/hero.jpg') center 48% / cover no-repeat;border:1px solid rgba(170,207,255,.16);border-radius:24px;}
+.page-band-inner {max-width:100%;margin:0;padding:0;position:relative;z-index:1;}
+.page-band h1 {font-size:clamp(2.5rem,5vw,4.3rem);line-height:1.1;letter-spacing:-.045em;margin:0 0 12px;font-weight:700;color:#f6f9ff;}
+.page-band .updated {color:#aab8cf;font-size:.87rem;letter-spacing:.02em;}
+main.doc {width:min(920px,calc(100% - 40px));max-width:920px;margin:0 auto;padding:50px 0 95px;color:#dae4f5;font-size:1rem;line-height:1.85;}
+main.doc p {margin:0 0 1.3em;}
+main.doc .lede {font-size:1.1rem;line-height:1.8;color:#cbd9eb;}
+main.doc h2 {font-size:clamp(1.26rem,2.8vw,1.65rem);line-height:1.35;letter-spacing:-.02em;color:#f6f9ff;margin:2.2em 0 .65em;}
+main.doc h3 {color:#eff5ff;margin:1.6em 0 .5em;}
+main.doc a {color:#93d4ff;text-underline-offset:3px;}
+main.doc ul,main.doc ol {padding-left:1.6rem;margin:0 0 1.6rem;}
+main.doc li {padding-left:.2rem;margin:.3rem 0;}
+main.doc .callout {background:rgba(20,43,76,.6);border:1px solid rgba(133,193,252,.2);border-radius:18px;padding:22px 25px;margin:27px 0 35px;}
+main.doc .callout p:last-child{margin-bottom:0;}
+@media(max-width:650px){.page-band{margin-top:20px;padding:36px 25px;}main.doc{padding:35px 0 65px;}footer .footer-grid{gap:32px;}}
+</style><link rel="stylesheet" href="/assets/consistency/footer-v1.css?v=20261022"/>
+</head>
+<body>
+<header class="agos-site-header">
+<div class="wrap nav" id="nav">
+<a aria-label="AGOS LLC home" class="brand" href="/"><img alt="AGOS LLC" src="/assets/agos-logo-clear-20261017.png" width="700" height="146"/></a>
+<ul class="links" id="site-links">
+<li><a href="/#products">Apps &amp; games</a></li>
+<li><a href="/#forge">In the Forge</a></li>
+<li><a href="/#about">About</a></li>
+<li><a href="/press/">Press</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+<div class="nav-right">
+<a class="button ghost" href="/#products">Explore our apps <span>→</span></a>
+<button aria-controls="site-links" aria-expanded="false" class="menu" type="button">Menu</button>
+</div></div></header>
+<div class="page-band">
+<div class="page-band-inner">
+<h1>Privacy</h1>
+<div class="updated">Last updated October 21, 2026</div>
+</div>
+</div>
+<main class="doc">
+<p class="lede">Agos LLC builds products with privacy in mind. Some products work entirely on your device; where a product needs to store shared content, we aim to collect only what is needed to operate the service and to protect readable content with end-to-end encryption where described below.</p>
+<div class="callout">
+<p><strong>The short version.</strong> TACH and Fingularity do not send app-use data to AGOS. Everyday Counter, an EverydayKeep product, encrypts shared content on your device before it leaves. We store the encrypted result plus the limited account and operational information described below.</p>
+</div>
+<h2>Who we are</h2>
+<p>Agos LLC is a California limited liability company. If you have questions about this policy or how a product handles information, use the <a href="/contact">contact page</a> and we will respond directly.</p>
+<h2>TACH</h2>
+<p>TACH reads system information from your device and displays it to you. That information is processed on the device and is never transmitted to us or to anyone else.</p>
+<ul>
+<li>No account, no sign-in, and no user identifier.</li>
+<li>No analytics, no crash reporting, and no advertising or tracking SDKs.</li>
+<li>No network requests carrying your data.</li>
+</ul>
+<p><strong>Photos (iPhone).</strong> If you choose to allow it, TACH reads your photo and video library on your device to count screenshots and videos and measure how much storage they use. It never uploads, changes, or deletes photos. Access is requested only when you tap Allow Photos Access, and you can turn it off at any time in the Settings app.</p>
+<p><strong>Settings and checklist answers.</strong> Your preferences, security self-check answers, and similar settings are stored only on your device.</p>
+<p><strong>Notifications.</strong> Alerts and reminders are created on your device. TACH does not use push notification servers.</p>
+<p><strong>Tach Pro purchases.</strong> Tach Pro is a one-time in-app purchase processed by Apple through the App Store on Apple devices, and by Google through Google Play on Android. We receive no payment details and no information that identifies you. TACH asks the store only whether Tach Pro has been purchased on your Apple Account or Google Account, so it can unlock features and restore them on your other devices.</p>
+<p><strong>Feedback.</strong> The Send Feedback button opens our <a href="/contact">contact page</a> and copies your TACH version, device model, and system version to your clipboard so you can paste them into your message if you choose. Nothing is sent unless you submit the form, and anything you submit is handled as described under Contact requests.</p>
+<p>Because nothing is transmitted, there is no server-side record of you associated with TACH, and nothing for us to disclose, sell, or hand over.</p>
+<h2>Fingularity</h2>
+<p>Fingularity is a game. Game progress and settings are stored on your device.</p>
+<ul>
+<li>No analytics, no advertising, and no tracking SDKs.</li>
+<li>Leaderboards are provided through Apple's Game Center. If you choose to submit a score, that interaction is between you and Apple under Apple's privacy policy. We do not operate our own leaderboard server and do not receive your Game Center identity.</li>
+<li>You can play without using Game Center at all.</li>
+</ul>
+<h2>Everyday Counter</h2>
+<p>Everyday Counter is a shared space for a family or a small group of friends. It is designed so that we cannot read what you put in it.</p>
+<h3>End-to-end encryption</h3>
+<p>Your content, including messages, plans, photos, and lists, is encrypted on your device before it is sent. We store only the encrypted result. The key needed to decrypt it stays with your group and is never sent to our servers. This means that we cannot read your content, we cannot produce it in readable form if we are asked to, and a breach of our storage would expose encrypted data rather than your family's photos and plans.</p>
+<p>The trade-off is real and you should know it: if every member of a group loses their key, that group's content cannot be recovered. We have no master key and no backdoor. That is the point, but it does mean recovery is not something we are able to offer.</p>
+<h3>What we do hold</h3>
+<p>To run the service we handle a small amount of operational information:</p>
+<ul>
+<li><strong>Encrypted content.</strong> Stored so your group can load it later. Unreadable to us.</li>
+<li><strong>Account basics.</strong> An email address for the adult who creates a group, used to sign in and to send service messages about the account.</li>
+<li><strong>Technical logs.</strong> Standard server records such as IP address and timestamps, kept briefly for security and abuse prevention, then deleted.</li>
+</ul>
+<p>We do not build advertising profiles, we do not sell or rent information to anyone, and we do not use your content to train machine learning models.</p>
+<h3>Family and child use</h3>
+<p>Everyday Counter is designed for family and small-group use under the control of an adult group administrator. We do not offer a public child profile or a public directory, and people outside a group cannot discover or contact a member through the service.</p>
+<p>We do not ask a child under 13 to create a separate AGOS account or provide AGOS with a separate email address. A parent or guardian may choose to let a child use a parent-managed family group. We do not use information about children for advertising, behavioral profiling, or public discovery. If you believe AGOS has received personal information from a child under 13 in a way you did not authorize, use the <a href="/contact">contact page</a> so we can review the situation and take appropriate action, including deletion where applicable.</p>
+<h3>Group membership</h3>
+<p>A group is closed. People join only by invitation from the parent or adult who administers it, and that administrator decides who is in the group and can remove members at any time.</p>
+<h2 id="website-analytics">This website and optional analytics</h2>
+<p>agosllc.com uses optional Google Analytics 4 to understand website visits and improve the site. We load Google Analytics only after you choose <strong>Accept analytics</strong>. If you reject analytics or leave the banner unanswered, our Analytics tag stays unloaded. This website measurement is separate from the native TACH and Fingularity apps described above.</p>
+<p>Fonts are loaded from Google Fonts, which means your browser contacts Google's servers to fetch them, and Google receives your IP address as part of that request. Our hosting and content delivery providers may keep standard server logs. If an online contact method is enabled and you use it, the information you submit is handled as described below.</p>
+<p>If you accept, Google receives website-usage information such as pages visited, browser and device information, referral information, and interaction events. Requests to Google also expose technical information such as your IP address. Our custom events measure product/store link clicks and press downloads, and do not include contact messages, email addresses, or signup fields. We disable Google signals and advertising personalization in the website tag and leave advertising consent denied.</p>
+<p>Your analytics choice is stored in your browser for up to 180 days. Analytics cookies created by this installation use the <code>agos_ga</code> prefix and expire after up to 180 days. You can change or withdraw consent through <strong>Cookie settings</strong> in the footer. Rejecting after previously accepting disables further collection by our tag and removes its accessible analytics cookies; it does not delete information already received by Google. Clearing browser storage also removes your saved choice.</p>
+<p>Google processes Analytics information under its applicable terms, and processing may occur outside your country. Learn more at <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank">how Google uses information from partner sites</a>. You can use the contact page for questions or privacy requests.</p>
+<p><button class="agos-cookie-open" data-agos-cookie-settings="" hidden="" type="button">Cookie settings</button></p>
+<h2>Contact requests</h2>
+<p>When an online contact method is enabled and you send us a message, we receive the name, email address, topic, and message you provide. We use that information to handle your request and reply, and we keep correspondence only as long as reasonably needed for that purpose, recordkeeping, security, or legal obligations. We do not add you to a marketing list or sell your contact information.</p>
+<h2>Your privacy choices and rights</h2>
+<p>Privacy rights vary by where you live and by which laws apply to AGOS and the particular service. Where applicable law gives you rights to access, correct, delete, or receive a copy of personal information, we will honor those rights. We also try to help with reasonable privacy requests even when a specific law does not require us to do so.</p>
+<p>We do not sell personal information, and we do not use personal information for cross-context behavioral advertising.</p>
+<p>For TACH and Fingularity, we generally do not hold app-use data tied to you. For Everyday Counter, we can act on account and service information we control and can delete encrypted content associated with an account or group where technically and legally appropriate. We cannot provide encrypted group content to you in readable form because AGOS does not have the group decryption key. Make a request through the <a href="/contact">contact page</a>.</p>
+<h2>Third parties</h2>
+<p>We keep service providers to a minimum. Providers may support hosting, content delivery, security, and delivery of contact requests when that feature is enabled. They process information for the services they provide to us, subject to their agreements and applicable law. Apple operates the App Store and Game Center, and Google operates Google Play, each under its own privacy terms, which govern your relationship with them.</p>
+<h2>Security</h2>
+<p>Content in Everyday Counter is encrypted on your device before transmission. Traffic to our sites and services is encrypted in transit. Credentials for our own infrastructure are stored as secrets and are not embedded in any app or web page. No system is perfectly secure, but a design that never receives your readable content limits what any failure can expose.</p>
+<h2>Changes</h2>
+<p>If we change this policy we will update the date at the top of this page. If a change materially affects how a product handles your information, we will say so plainly rather than quietly revising the text.</p>
+<h2>Contact</h2>
+<p>Questions, requests, or concerns about privacy go through the <a href="/contact">contact page</a>. A person reads these.</p>
+<h2 id="launch-updates">TACH launch notification requests</h2><p>If you opt in on the TACH page, we receive your email address and your request to hear when TACH launches. We use your address only to handle that request and send the TACH launch notification. This is separate from ordinary support correspondence and does not subscribe you to a general marketing list. Requests are delivered to the studio through our contact service, or through your email app if you use the email option. We retain them only as long as needed to fulfill the request. You can withdraw consent or request deletion by emailing <a href="/contact/?topic=tach&amp;subject=Remove+TACH+launch+notification+request">admin@agosllc.com</a>.</p>
+<section id="free-up" class="free-up-legal-addition" style="margin:48px 0;padding:26px;border:1px solid #34517b;border-radius:18px;background:#0f1830"><h2>FREE-UP: Photo Storage Cleaner</h2><p>FREE-UP for iPhone and iPad is a free, on-device photo storage cleaner. Photo and video scanning, duplicate matching, similar-photo suggestions, storage scoring and cleanup review happen locally on your device. AGOS LLC does not collect, upload, track or sell FREE-UP photos, videos, scan results, storage measurements or personal identifiers. FREE-UP has no app accounts, advertising, analytics, remote processing servers or third-party SDKs. It requests Photo Library access (full or limited) using Apple's permissions; limited access means partial results. No media is preselected or deleted without your confirmation. iOS requests its own deletion confirmation, and deleted items normally remain in Recently Deleted for 30 days unless permanently removed sooner. With iCloud Photos, deletion may synchronize across devices, and iCloud-only originals are not downloaded without permission. Contacting AGOS through the website is optional and governed by this website policy. <a href="/free-up/privacy/">Read the dedicated FREE-UP Privacy Policy</a>.</p></section></main>
+<footer class="agos-unified-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div class="footer-brand">
+<img alt="AGOS LLC" src="/assets/press/agos-logo-transparent.png" width="700" height="146"/>
+<p>Original games and practical apps from a family-run California studio.</p>
+</div>
+<div>
+<h4>Studio</h4>
+<ul>
+<li><a href="https://www.teamsinigang.com/" rel="noopener" target="_blank">Team Sinigang</a></li>
+<li><a href="https://www.agosforge.com/" rel="noopener" target="_blank">Agos Forge</a></li>
+<li><a href="/#forge">In the Forge</a></li>
+</ul>
+</div>
+<div>
+<h4>AGOS</h4>
+<ul>
+<li><a href="/#about">About</a></li>
+<li><a href="/free-up/">FREE-UP</a></li><li><a href="/tach/">TACH</a></li><li><a href="/starfall/">Starfall</a></li><li><a href="/#products">All apps &amp; games</a></li>
+<li><a href="/press/">Press</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4>Legal</h4>
+<ul>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/terms/">Terms</a></li>
+<li><button type="button" class="agos-cookie-open" data-agos-cookie-settings hidden>Cookie settings</button></li>
+</ul>
+</div>
+</div>
+<div class="legal">
+<span>© 2026 AGOS LLC. All rights reserved.</span>
+<span>Independent · family-run · built in California</span>
+</div>
+</div>
+</footer>
+<script defer="" src="/assets/refresh/contact-header-v2.js"></script></body>
+</html>

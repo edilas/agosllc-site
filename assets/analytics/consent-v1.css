@@ -1,0 +1,17 @@
+.agos-cookie-panel[hidden],.agos-cookie-panel [hidden],.agos-cookie-open[hidden]{display:none!important}
+.agos-cookie-panel,.agos-cookie-panel *{box-sizing:border-box}
+.agos-cookie-panel{position:fixed;z-index:1000;left:50%;bottom:18px;transform:translateX(-50%);width:min(1100px,calc(100% - 32px));max-height:calc(100dvh - 36px);overflow:auto;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:24px;padding:24px;border:1px solid #354c6b;border-radius:20px;background:#0a1426;color:#eef5ff;font-family:"Sora",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;box-shadow:0 18px 70px rgba(0,0,0,.55)}
+.agos-cookie-panel h2{font-size:1.08rem!important;line-height:1.35!important;letter-spacing:-.015em!important;color:#f6f9ff!important;margin:0 0 9px!important;padding:0!important;border:0!important;font-weight:650!important}
+.agos-cookie-panel p{font-size:.86rem!important;line-height:1.6!important;color:#c0cee2!important;margin:0!important}
+.agos-cookie-panel p.agos-cookie-current{font-size:.76rem!important;color:#92aacb!important;margin-top:8px!important}
+.agos-cookie-panel a{color:#9bd5ff!important;text-decoration:underline!important;text-underline-offset:3px}
+.agos-cookie-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:flex-start;max-width:365px}
+.agos-cookie-actions button{appearance:none;cursor:pointer;min-height:46px;border:1px solid #6d8aa9;border-radius:999px;background:#132640;color:#f3f8ff;font:600 .82rem/1.35 "Sora",system-ui,sans-serif;padding:12px 17px;white-space:nowrap;margin:0}
+.agos-cookie-actions button:hover{background:#1b3658;border-color:#a8d0f5}
+.agos-cookie-actions button.agos-cookie-close{border-color:transparent;background:transparent;color:#c4d8ee;text-decoration:underline;font-weight:400}
+.agos-cookie-open{appearance:none;display:inline-block;background:none;border:0;color:inherit;cursor:pointer;font:inherit;font-size:.82rem;line-height:1.5;text-decoration:underline;text-underline-offset:3px;padding:6px 0;margin:0}
+.agos-cookie-open:hover{color:#d9edff}
+.agos-cookie-panel :focus-visible,.agos-cookie-open:focus-visible{outline:3px solid #63dafa!important;outline-offset:4px}
+.agos-cookie-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:900px){.agos-cookie-panel{grid-template-columns:1fr;gap:16px;padding:21px}.agos-cookie-actions{max-width:none}}
+@media(max-width:480px){.agos-cookie-panel{width:calc(100% - 20px);bottom:10px;max-height:calc(100dvh - 20px);padding:18px;border-radius:16px}.agos-cookie-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.agos-cookie-actions button{padding:12px 9px;white-space:normal}.agos-cookie-actions button.agos-cookie-close{grid-column:1/-1}}

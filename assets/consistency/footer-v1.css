@@ -1,0 +1,14 @@
+/* Canonical shared footer; designed to match the October 2026 homepage. */
+footer.agos-unified-footer {background:#050b17;color:#bdc9dc;border-top:1px solid rgba(170,207,255,.16);padding:58px 0 25px;font-family:"Sora",system-ui,sans-serif;font-size:14px;line-height:1.6;}
+footer.agos-unified-footer .wrap{width:min(1240px,calc(100% - 40px));margin-inline:auto;max-width:1240px;padding:0;}
+footer.agos-unified-footer .footer-grid{display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:35px;align-items:start;}
+footer.agos-unified-footer .footer-brand img{display:block;width:126px;max-width:100%;height:auto;opacity:.88;margin-bottom:14px;}
+footer.agos-unified-footer .footer-brand p{font-size:.8rem;color:#8799b3;max-width:260px;margin:0;}
+footer.agos-unified-footer h4{color:#f2f7ff;font-size:.83rem;font-weight:700;margin:0 0 15px;}
+footer.agos-unified-footer a{display:inline-block;color:#a9bbd4;text-decoration:none;font-weight:400;font-size:.81rem;}
+footer.agos-unified-footer a:hover{color:#69d9ff;}
+footer.agos-unified-footer .footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+footer.agos-unified-footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid rgba(170,207,255,.15);padding-top:20px;margin-top:43px;color:#8498b5;font-size:.75rem;}
+footer.agos-unified-footer .footer-bottom a{font-size:inherit;}
+@media(max-width:850px){footer.agos-unified-footer .footer-grid{grid-template-columns:1fr 1fr;gap:28px;}}
+@media(max-width:540px){footer.agos-unified-footer .footer-grid{grid-template-columns:1fr;gap:28px;}footer.agos-unified-footer .footer-bottom{display:block;}footer.agos-unified-footer .footer-bottom>*{margin-bottom:8px;}}

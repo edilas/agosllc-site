@@ -1,0 +1,14 @@
+FREE-UP Android production update — October 26, 2026
+Google Play listing URL provided by publisher:
+https://play.google.com/store/apps/details?id=com.agosllc.freeup
+
+Changes:
+- Homepage rotating FREE-UP slide: Google Play launch CTA, iPhone launch notification CTA retained.
+- Homepage FREE-UP product card: Android available; direct Google Play URL.
+- /free-up/: live Google Play CTA in hero and footer; Android FAQ updated.
+- Existing original AGOS hero remains first and unchanged.
+- Existing contact submission implementation unchanged.
+- Existing translucent FREE-UP CTA panel retained.
+
+Verify current Google Play listing loads in browser; external fetch access was blocked.
+Do not upload an earlier ZIP after this one.

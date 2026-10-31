@@ -1,0 +1,5 @@
+Transparent press variant of the established AGOS LLC wordmark.
+PNG: 2800 x 584, RGBA, transparent background.
+SVG: editable paths with gradients, 700 x 146 viewBox.
+The variant traces the original logo silhouettes and uses clean fills; it does not reproduce the original raster texture or surrounding glow.
+Keep the original aspect ratio. The white wordmark is intended for dark placements.

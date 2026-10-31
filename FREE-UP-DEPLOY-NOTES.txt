@@ -1,0 +1,13 @@
+AGOS LLC · FREE-UP full site update · Oct 25 2026
+
+Baseline: saved Oct 22 contact-form-routing whole-site package. The live website rejected automated fetch and could not be visually verified.
+
+HERO: Existing /assets/hero.jpg and homepage hero copy remain the FIRST default slide. FREE-UP is slide 2. 8.5 second rotation, manual slide dots and pause control. Pauses while focused/hovered or tab hidden. Automatically stays static under prefers-reduced-motion.
+
+ADDED: /free-up/ landing page with kit assets, /free-up/privacy/ dedicated privacy page, FREE-UP app card on homepage, FREE-UP privacy and terms sections, contact topic selector and auto-prefill. Sitemap URLs added.
+
+CONTACT: Existing Cloudflare Worker submission endpoint and validation preserved. New FREE-UP links point to /contact/ with topic / subject preselection. No mailto links remain in HTML. Launch requests go to existing contact inbox; this does NOT create an automated mailing list.
+
+STATUS: FREE-UP preparing for App Store submission. No live App Store download badge shown. Android planned.
+
+Before deploying: BACK UP CURRENT PRODUCTION FILES; compare to this saved-site baseline. Verify contact form with a test send and check responsiveness. Review privacy/terms disclosures against final shipping app build and get legal review where needed.

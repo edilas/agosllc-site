@@ -1,0 +1,5 @@
+Starfall Android gameplay previews
+
+Screenshots rendered from the unmodified bundled Android web game using Chromium, with the release bridge present and test flag false. Representative earned progress was staged for late-game screenshots; native purchase callbacks were mocked. These are game-engine renders, not Android-device captures. No platform status/navigation bars were fabricated. Phone:1080x1920; 7-inch:1920x1200; 10-inch:2560x1600. Capture final signed Play build on device if native UI or layout changes.
+
+Android status: in Google Play review, not publicly available yet.

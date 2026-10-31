@@ -1,0 +1,13 @@
+FREE-UP: Photo Storage Cleaner iPhone/iPad public launch update — October 31, 2026
+
+Apple App Store: https://apps.apple.com/us/app/free-up-photo-storage-cleaner/id6826870878
+Google Play: https://play.google.com/store/apps/details?id=com.agosllc.freeup
+
+Changes:
+- FREE-UP rotating hero now links directly to both stores and says released on both.
+- FREE-UP homepage card now links directly to both stores with green released badges.
+- Product landing page and FAQ updated to show the iOS/iPadOS release and direct App Store link.
+- Removed FREE-UP iPhone launch notification buttons from the public pages.
+- Other apps and original rotating hero order preserved.
+
+Deploy this package only after backing up currently deployed files. Site is not remotely published by this action.

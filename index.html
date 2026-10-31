@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGOS LLC — Original Games &amp; Practical Apps</title>
+<meta content="AGOS LLC is an independent, family-run California studio creating original games and practical apps, including Fingularity, Starfall, and TACH." name="description"/>
+<meta content="#050915" name="theme-color"/>
+<meta content="AGOS LLC — Ideas in motion" property="og:title"/>
+<meta content="Original games and practical apps from an independent, family-run California studio." property="og:description"/>
+<meta content="https://www.agosllc.com/assets/hero.jpg" property="og:image"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --bg:#050915;
+      --bg2:#081225;
+      --panel:rgba(12,25,48,.72);
+      --panel-strong:#0c1730;
+      --line:rgba(170,207,255,.15);
+      --line-strong:rgba(170,207,255,.28);
+      --text:#f6f9ff;
+      --muted:#aab8cf;
+      --soft:#73839d;
+      --blue:#58a6ff;
+      --cyan:#61e6ff;
+      --purple:#ad85ff;
+      --warm:#ffb168;
+      --green:#75e5b4;
+      --max:1240px;
+      --radius:24px;
+      --shadow:0 24px 80px rgba(0,0,0,.34);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      font-family:"Sora",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 12% 12%,rgba(64,131,255,.14),transparent 28rem),
+        radial-gradient(circle at 92% 40%,rgba(161,89,255,.10),transparent 26rem),
+        var(--bg);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    button,input{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#9ec9ff;
+    }
+    .eyebrow::before{content:"";width:28px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent)}
+    .section-title{margin:14px 0 14px;font-size:clamp(2rem,4.2vw,4rem);line-height:1.02;letter-spacing:-.055em;max-width:850px}
+    .section-copy{margin:0;color:var(--muted);font-size:clamp(1rem,1.5vw,1.12rem);max-width:720px}
+    .button{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:48px;padding:0 19px;border-radius:999px;text-decoration:none;font-weight:650;font-size:.9rem;
+      border:1px solid transparent;transition:transform .2s,border-color .2s,background .2s,color .2s;
+    }
+    .button:hover{transform:translateY(-2px)}
+    .button.primary{background:linear-gradient(135deg,#d7ecff,#76c5ff);color:#07101d;box-shadow:0 10px 30px rgba(88,166,255,.22)}
+    .button.ghost{border-color:var(--line-strong);background:rgba(6,14,30,.48);backdrop-filter:blur(12px);color:#eaf3ff}
+    .button.ghost:hover{background:rgba(18,36,66,.72);border-color:rgba(172,211,255,.45)}
+
+    /* Header */
+    header{
+      position:fixed;z-index:50;top:0;left:0;right:0;
+      background:linear-gradient(180deg,rgba(3,7,16,.88),rgba(3,7,16,.45),transparent);
+      backdrop-filter:blur(3px);
+    }
+    .nav{
+      min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:26px;
+    }
+    .brand{display:flex;align-items:center;text-decoration:none;min-width:155px}
+    .brand img{width:148px;height:auto;opacity:.95}
+    .links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
+    .links a{text-decoration:none;color:#c3cee0;font-size:.86rem;font-weight:550;transition:color .18s}
+    .links a:hover{color:white}
+    .nav-right{display:flex;align-items:center;gap:12px}
+    .menu{display:none;background:rgba(7,15,30,.7);color:#fff;border:1px solid var(--line-strong);border-radius:999px;padding:9px 14px}
+
+    /* Hero */
+    .hero{position:relative;min-height:820px;height:100svh;max-height:980px;display:flex;align-items:center;isolation:isolate;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;z-index:-3;background:url('/assets/hero.jpg') center center / cover no-repeat;transform:scale(1.015)}
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:-2;
+      background:
+        linear-gradient(90deg,rgba(2,7,17,.88) 0%,rgba(2,7,17,.72) 28%,rgba(2,7,17,.22) 60%,rgba(2,7,17,.02) 100%),
+        linear-gradient(180deg,rgba(2,7,17,.45) 0%,transparent 22%,transparent 70%,#050915 100%);
+    }
+    .hero::after{content:"";position:absolute;inset:auto 0 0;height:160px;z-index:-1;background:linear-gradient(180deg,transparent,var(--bg))}
+    .hero-content{padding-top:80px;width:min(690px,62vw)}
+    .hero h1{font-size:clamp(3.2rem,7vw,6.7rem);line-height:.93;letter-spacing:-.065em;margin:22px 0 24px;font-weight:650;text-wrap:balance}
+    .hero h1 span{display:block;color:#b9d8ff}
+    .hero p{font-size:clamp(1.05rem,1.6vw,1.25rem);color:#c2cde0;max-width:610px;margin:0 0 30px;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-note{margin-top:28px;display:flex;align-items:center;gap:12px;color:#97a9c3;font-size:.79rem;letter-spacing:.04em}
+    .hero-note::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px var(--cyan)}
+    .scroll-note{position:absolute;bottom:42px;left:50%;transform:translateX(-50%);font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:rgba(217,231,255,.55)}
+
+    /* Company intro */
+    .intro{padding:105px 0 75px;position:relative}
+    .intro-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+    .intro-stat{border-left:1px solid var(--line);padding-left:24px;color:var(--soft);font-size:.84rem;text-transform:uppercase;letter-spacing:.12em;line-height:1.9}
+    .intro-stat strong{display:block;color:#eef6ff;font-size:1.05rem;letter-spacing:0;text-transform:none;margin-bottom:4px}
+    .intro h2{font-size:clamp(2.4rem,5vw,4.9rem);line-height:1.01;letter-spacing:-.055em;margin:0 0 24px}
+    .intro p{color:var(--muted);font-size:1.05rem;max-width:760px;margin:0}
+    .intro p+p{margin-top:16px}
+
+    /* Universe */
+    .universe{padding:90px 0 110px;position:relative}
+    .universe::before{
+      content:"";position:absolute;left:50%;top:40px;width:min(1000px,90vw);height:520px;transform:translateX(-50%);border:1px solid rgba(101,159,240,.08);border-radius:50%;filter:blur(.2px);pointer-events:none;
+    }
+    .universe-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:42px}
+    .universe-head .section-copy{max-width:530px}
+    .brand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .brand-card{
+      position:relative;overflow:hidden;min-height:420px;padding:30px;border:1px solid var(--line);border-radius:var(--radius);
+      background:linear-gradient(160deg,rgba(17,35,67,.82),rgba(8,17,35,.74));text-decoration:none;box-shadow:var(--shadow);
+      transition:transform .28s ease,border-color .28s ease;
+    }
+    .brand-card:hover{transform:translateY(-7px);border-color:var(--accent)}
+    .brand-card::before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;right:-85px;top:-90px;background:radial-gradient(circle,var(--glow),transparent 70%);opacity:.55}
+    .brand-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(1,6,16,.48));pointer-events:none}
+    .brand-card > *{position:relative;z-index:1}
+    .brand-card .orb{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;margin-bottom:88px;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);background:color-mix(in srgb,var(--accent) 11%,transparent);box-shadow:inset 0 0 24px color-mix(in srgb,var(--accent) 12%,transparent),0 0 34px color-mix(in srgb,var(--accent) 9%,transparent)}
+    .brand-card .orb svg{width:28px;height:28px;stroke:var(--accent)}
+    .brand-card .mini{font-size:.67rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+    .brand-card h3{font-size:1.65rem;letter-spacing:-.035em;margin:9px 0 10px}
+    .brand-card p{color:#aebcd1;margin:0 0 24px;font-size:.94rem}
+    .brand-card .arrow{position:absolute;left:30px;bottom:28px;font-weight:700;font-size:.85rem;color:#e8f3ff}
+    .brand-card.sinigang{--accent:#ffb46c;--glow:rgba(255,139,55,.38)}
+    .brand-card.forge{--accent:#7ab7ff;--glow:rgba(64,145,255,.42)}
+    .brand-card.keep{--accent:#7ce5b6;--glow:rgba(78,214,155,.34)}
+
+    /* Products */
+    .products{padding:105px 0;background:linear-gradient(180deg,rgba(7,17,35,.3),rgba(8,19,39,.78),rgba(5,9,21,.95));border-block:1px solid var(--line)}
+    .products-head{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:end;margin-bottom:42px}
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#091429;transition:transform .25s,border-color .25s}
+    .product-card:hover{transform:translateY(-5px);border-color:var(--line-strong)}
+    .product-image{aspect-ratio:16/10;overflow:hidden;background:#0c1730}
+    .product-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .product-card:hover .product-image img{transform:scale(1.035)}
+    .product-body{padding:24px}
+    .product-brand{font-size:.65rem;text-transform:uppercase;letter-spacing:.14em;color:#7fa8d8;font-weight:700}
+    .product-body h3{font-size:1.4rem;letter-spacing:-.03em;margin:8px 0}
+    .product-body p{color:var(--muted);font-size:.91rem;margin:0 0 20px;min-height:68px}
+    .product-link{display:inline-flex;gap:8px;align-items:center;color:#d9ebff;text-decoration:none;font-size:.82rem;font-weight:650}
+    .product-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+    .chip{padding:6px 9px;border:1px solid var(--line);border-radius:999px;color:#8395b1;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em}
+
+    /* TACH preview */
+    .tach-preview{padding:105px 0 115px;background:radial-gradient(circle at 50% 18%,rgba(40,127,255,.13),transparent 40%),#050b18;border-bottom:1px solid var(--line)}
+    .tach-preview-shell{border:1px solid var(--line-strong);border-radius:32px;padding:clamp(28px,4vw,44px);background:linear-gradient(180deg,rgba(10,18,34,.92),rgba(6,12,24,.98));box-shadow:var(--shadow)}
+    .tach-preview-head{display:grid;grid-template-columns:1fr;gap:14px;align-items:start;margin-bottom:36px;max-width:860px}
+    .tach-preview-copy{color:var(--muted);max-width:760px;margin:0;font-size:.98rem;line-height:1.72}
+    .tach-shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+    .tach-shot{display:flex;flex-direction:column;border:1px solid rgba(145,188,245,.14);border-radius:28px;background:linear-gradient(180deg,rgba(11,20,38,.96),rgba(6,12,24,.98));padding:18px;box-shadow:0 24px 64px rgba(0,0,0,.24)}
+    .tach-shot-media{padding:12px;border:1px solid rgba(145,188,245,.12);border-radius:22px;background:radial-gradient(circle at 50% 0%,rgba(45,127,255,.10),transparent 55%),#08111f}
+    .tach-shot img{display:block;width:100%;height:auto;border-radius:16px;background:#050b18}
+    .tach-shot figcaption{padding:18px 6px 6px}
+    .tach-label{display:inline-flex;align-items:center;padding:7px 10px;border:1px solid rgba(145,188,245,.18);border-radius:999px;color:#8fb3df;font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:12px}
+    .tach-shot figcaption h3{margin:0 0 8px;font-size:1.08rem;letter-spacing:-.02em}
+    .tach-shot figcaption p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.62}
+
+    /* Build */
+    .build{padding:115px 0}
+    .build-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+    .principles{display:grid;gap:0;border-top:1px solid var(--line)}
+    .principle{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:28px 0;border-bottom:1px solid var(--line)}
+    .num{font-size:.72rem;color:#5f7698;padding-top:4px}
+    .principle h3{margin:0 0 6px;font-size:1.15rem}
+    .principle p{margin:0;color:var(--muted);font-size:.92rem}
+
+    /* AGOS meaning */
+    .meaning{padding:30px 0 110px}
+    .meaning-card{
+      position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;gap:45px;padding:clamp(32px,5vw,64px);border-radius:30px;border:1px solid var(--line-strong);background:linear-gradient(135deg,rgba(14,34,65,.9),rgba(8,18,38,.9));box-shadow:var(--shadow)
+    }
+    .meaning-card::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-240px;top:-210px;border:1px solid rgba(105,185,255,.17);box-shadow:0 0 90px rgba(65,143,255,.10),inset 0 0 90px rgba(80,155,255,.08)}
+    .meaning-card h2{font-size:clamp(2.2rem,4.8vw,4.5rem);letter-spacing:-.055em;line-height:.98;margin:15px 0 20px}
+    .meaning-card p{color:#b4c3d8;max-width:700px;margin:0}
+    .meaning-aside{align-self:end;padding-left:30px;border-left:1px solid var(--line);position:relative}
+    .meaning-aside strong{display:block;font-size:1.5rem;letter-spacing:-.04em;margin-bottom:8px}
+    .meaning-aside span{color:var(--soft);font-size:.86rem}
+
+    /* Closing */
+    .closing{padding:90px 0 105px;text-align:center}
+    .closing .eyebrow{justify-content:center}
+    .closing h2{font-size:clamp(2.4rem,5.5vw,5.3rem);letter-spacing:-.06em;line-height:.96;margin:18px auto 22px;max-width:900px}
+    .closing p{color:var(--muted);max-width:650px;margin:0 auto 28px}
+    .closing-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+    footer{border-top:1px solid var(--line);padding:42px 0 36px;color:#8291a9;background:#040812}
+    .footer-grid{display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:35px}
+    .footer-brand img{width:126px;opacity:.88;margin-bottom:14px;height:auto;max-width:100%;}
+    .footer-brand p{font-size:.8rem;color:#697b96;max-width:260px;margin:0}
+    footer h4{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:#8297b7;margin:0 0 13px}
+    footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+    footer a{text-decoration:none;color:#9aa9bf;font-size:.82rem}
+    footer a:hover{color:white}
+    .legal{border-top:1px solid rgba(170,207,255,.09);margin-top:35px;padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#62728b;font-size:.74rem}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:980px){
+      .hero{min-height:760px;height:90svh}
+      .hero-content{width:min(680px,80vw)}
+      .hero::before{background:linear-gradient(90deg,rgba(2,7,17,.88) 0%,rgba(2,7,17,.64) 55%,rgba(2,7,17,.15) 100%),linear-gradient(180deg,rgba(2,7,17,.4),transparent 45%,#050915)}
+      .intro-grid,.build-grid,.meaning-card,.products-head{grid-template-columns:1fr;gap:32px}
+      .brand-grid,.product-grid{grid-template-columns:1fr}
+      .brand-card{min-height:330px}
+      .brand-card .orb{margin-bottom:65px}
+      .product-body p{min-height:auto}
+      .universe-head{display:block}.universe-head .section-copy{margin-top:18px}
+
+      .tach-preview-shell{padding:24px}
+      .tach-preview-head{gap:16px;margin-bottom:26px}
+      .tach-shot-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .meaning-aside{padding-left:0;padding-top:24px;border-left:0;border-top:1px solid var(--line)}
+    }
+    @media(max-width:760px){
+      .wrap{width:min(var(--max),calc(100% - 28px))}
+      .links,.nav-right .button{display:none}
+      .menu{display:block}
+      .nav.open .links{display:flex;position:absolute;left:14px;right:14px;top:72px;flex-direction:column;align-items:stretch;gap:4px;padding:13px;border:1px solid var(--line-strong);border-radius:18px;background:rgba(5,12,25,.96);box-shadow:0 18px 60px rgba(0,0,0,.4)}
+      .nav.open .links a{display:block;padding:11px 12px}
+      .brand img{width:132px}
+      .hero{height:88svh;min-height:700px;align-items:flex-end;padding-bottom:100px}
+      .hero-bg{background-position:58% center}
+      .hero::before{background:linear-gradient(180deg,rgba(2,7,17,.28) 0%,rgba(2,7,17,.24) 24%,rgba(2,7,17,.70) 56%,#050915 100%)}
+      .hero-content{width:100%;padding-top:120px}
+      .hero h1{font-size:clamp(2.85rem,14vw,5rem);max-width:640px}
+      .hero p{font-size:1rem;max-width:520px}
+      .scroll-note{display:none}
+      .intro{padding-top:80px}
+      .universe,.products,.build{padding-block:80px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:520px){
+      .footer-grid{grid-template-columns:1fr}
+      .hero-actions .button{width:100%}
+      .brand-card{padding:24px}
+      .brand-card .arrow{left:24px}
+      .principle{grid-template-columns:38px 1fr}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button,.brand-card,.product-card,.product-image img{transition:none}
+    }
+  @media(min-width:761px) and (max-width:980px){.links{gap:18px}.nav-right .button{display:none}}
+
+/* AGOS five-slide homepage carousel: original remains first. */
+.hero .agos-product-slide{position:absolute;inset:0;z-index:1;display:flex;align-items:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .9s ease,visibility .9s;background-size:cover;background-position:center}
+.hero[data-slide="1"] .freeup-hero-slide{opacity:1;visibility:visible;pointer-events:auto}
+.hero[data-slide="2"] .agos-product-slide[data-product="tach"],.hero[data-slide="3"] .agos-product-slide[data-product="starfall"],.hero[data-slide="4"] .agos-product-slide[data-product="fingularity"]{opacity:1;visibility:visible;pointer-events:auto}
+.hero:not([data-slide="0"])>.wrap,.hero:not([data-slide="0"])>.scroll-note{opacity:0;pointer-events:none}
+.hero[data-slide="0"] .freeup-hero-slide{opacity:0;visibility:hidden;pointer-events:none}
+.agos-product-slide .agos-slide-panel{width:min(720px,100%);padding:clamp(24px,4vw,48px);border-radius:28px;border:1px solid rgba(151,193,242,.42);background:linear-gradient(135deg,rgba(5,14,32,.91),rgba(11,29,58,.82));box-shadow:0 22px 75px #0008;backdrop-filter:blur(12px)}
+.agos-product-slide .agos-slide-panel h2{font-size:clamp(2.5rem,5.4vw,5.3rem);line-height:1.05;letter-spacing:-.045em;margin:14px 0;color:#f5f9ff}
+.agos-product-slide .agos-slide-panel p{color:#d6e5f8;font-size:clamp(1rem,1.5vw,1.17rem);max-width:610px}
+.agos-slide-status{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0}
+.agos-slide-status span{border:1px solid #a9b9d65e;border-radius:30px;padding:7px 12px;color:#b8c6de;background:#08162cc9;font-size:.76rem}
+.agos-slide-status .released{border-color:rgba(117,229,180,.55);color:#98f5c5}
+.agos-product-slide[data-product="tach"]{background-image:linear-gradient(90deg,rgba(3,10,25,.95),rgba(3,10,25,.63)),url('/assets/tach-ui.webp')}
+.agos-product-slide[data-product="starfall"]{background-image:linear-gradient(90deg,rgba(3,10,25,.93),rgba(3,10,25,.60)),url('/assets/launch/starfall-feature.png')}
+.agos-product-slide[data-product="fingularity"]{background-image:linear-gradient(90deg,rgba(3,10,25,.92),rgba(3,10,25,.58)),url('/assets/fingularity.jpg')}
+.agos-hero-controls{max-width:calc(100% - 30px)}
+@media(max-width:720px){.agos-product-slide .agos-slide-panel{padding:25px 20px;margin:80px 0 86px}.agos-product-slide{overflow-y:auto}.agos-product-slide .agos-slide-panel h2{font-size:2.35rem}}
+@media(prefers-reduced-motion:reduce){.hero .agos-product-slide{transition:none}}
+</style>
+<link href="https://www.agosllc.com/" rel="canonical"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+<link as="image" fetchpriority="high" href="/assets/hero.jpg" rel="preload"/>
+<meta content="https://www.agosllc.com/" property="og:url"/>
+<meta content="AGOS LLC" property="og:site_name"/>
+<meta content="1920" property="og:image:width"/>
+<meta content="1081" property="og:image:height"/>
+<meta content="AGOS LLC — ideas in motion" property="og:image:alt"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="AGOS LLC — Ideas in motion" name="twitter:title"/>
+<meta content="Original games and practical apps from an independent, family-run California studio." name="twitter:description"/>
+<meta content="https://www.agosllc.com/assets/hero.jpg" name="twitter:image"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.agosllc.com/#organization",
+      "name": "AGOS LLC",
+      "legalName": "Agos LLC",
+      "url": "https://www.agosllc.com/",
+      "logo": "https://www.agosllc.com/assets/agos-logo-clear-20261017.png",
+      "image": "https://www.agosllc.com/assets/hero.jpg",
+      "description": "AGOS LLC is an independent, family-run California studio creating original games and practical apps, including Fingularity, Starfall, and TACH.",
+      "foundingDate": "2026-09-15",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "brand": [
+        {
+          "@type": "Brand",
+          "name": "Team Sinigang",
+          "url": "https://www.teamsinigang.com/"
+        },
+        {
+          "@type": "Brand",
+          "name": "Agos Forge",
+          "url": "https://www.agosforge.com/"
+        }
+      ],
+      "sameAs": [
+        "https://www.teamsinigang.com/",
+        "https://www.agosforge.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.agosllc.com/#website",
+      "url": "https://www.agosllc.com/",
+      "name": "AGOS LLC",
+      "publisher": {
+        "@id": "https://www.agosllc.com/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://www.agosllc.com/#fingularity",
+      "name": "Fingularity",
+      "operatingSystem": "iOS",
+      "applicationCategory": "GameApplication",
+      "url": "https://apps.apple.com/us/app/fingularity/id6817209627",
+      "image": "https://www.agosllc.com/assets/fingularity.jpg",
+      "description": "A touch-driven celestial game: one finger against black holes, bosses, fleets, and the dark.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@id": "https://www.agosllc.com/#organization"
+      }
+    }
+  ]
+}</script>
+<link href="/assets/analytics/consent-v1.css" rel="stylesheet"/>
+<script defer="" src="/assets/analytics/consent-v1.js"></script>
+<link href="/assets/refresh/contact-header-v2.css" rel="stylesheet"/>
+<link href="/assets/launch/studio-20261018.css" rel="stylesheet"/>
+<link href="/assets/consistency/footer-v1.css?v=20261022" rel="stylesheet"/>
+<style id="freeup-site-additions">
+/* HERO: original slide (including /assets/hero.jpg) remains untouched and is always slide 1. */
+.hero .freeup-hero-slide{position:absolute;inset:0;z-index:1;display:flex;align-items:center;background:linear-gradient(90deg,rgba(3,9,24,.88),rgba(3,9,24,.42)),url('/assets/free-up/space-background.jpg') center 57%/cover no-repeat;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s;pointer-events:none}
+.hero.freeup-active .freeup-hero-slide{opacity:1;visibility:visible;pointer-events:auto}
+.hero.freeup-active>.wrap,.hero.freeup-active>.scroll-note{opacity:0;pointer-events:none}
+.hero>.wrap,.hero>.scroll-note{transition:opacity .6s ease}
+.freeup-hero-inner{display:flex;align-items:center;gap:34px;max-width:1000px;margin:auto}
+.freeup-hero-icon{width:clamp(110px,14vw,210px);border-radius:26%;box-shadow:0 0 50px #16cce641;align-self:flex-start}
+.freeup-hero-inner h2{font-size:clamp(3.4rem,8vw,7rem);line-height:1;margin:15px 0 8px;letter-spacing:-.065em;color:#f2f6ff}
+.freeup-hero-inner h2 em{font-style:normal;color:#5be7ff}
+.freeup-subtitle{font-size:clamp(1.2rem,2.5vw,2rem);font-weight:700;color:#5be7ff}
+.freeup-hero-inner p{max-width:650px;color:#d4deed;font-size:1.04rem}
+.freeup-hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.freeup-hero-tags span{border:1px solid #4583b368;border-radius:50px;padding:7px 12px;background:#07162eac;color:#e9f5ff;font-size:.8rem}
+.agos-hero-controls{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:8;display:flex;align-items:center;gap:12px;padding:8px 13px;border:1px solid #7896b344;border-radius:50px;background:#061022dd}
+.agos-hero-dot{width:12px;height:12px;border:1px solid #a1b8d7;border-radius:50%;background:transparent;cursor:pointer;padding:0}
+.agos-hero-dot.active{background:#5be7ff;border-color:#5be7ff}
+.agos-hero-pause{background:none;border:0;color:#eaf5ff;font:inherit;cursor:pointer;font-size:.78rem;padding:1px 5px}
+.hero .scroll-note{bottom:78px}
+@media(max-width:720px){.freeup-hero-inner{display:block;padding:85px 0 80px}.freeup-hero-icon{width:75px}.freeup-hero-inner h2{font-size:3.6rem}.hero .freeup-hero-slide{overflow-y:auto}.freeup-hero-inner p{font-size:.95rem}}
+@media(prefers-reduced-motion:reduce){.hero .freeup-hero-slide,.hero>.wrap,.hero>.scroll-note{transition:none}}
+</style></head>
+<body>
+<header class="agos-site-header">
+<div class="wrap nav" id="nav">
+<a aria-label="AGOS LLC home" class="brand" href="/"><img alt="AGOS LLC" height="146" src="/assets/agos-logo-clear-20261017.png" width="700"/></a>
+<ul class="links" id="site-links">
+<li><a href="/#products">Apps &amp; games</a></li>
+<li><a href="/#forge">In the Forge</a></li>
+<li><a href="/#about">About</a></li>
+<li><a href="/press/">Press</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+<div class="nav-right">
+<a class="button ghost" href="/#products">Explore our apps <span>→</span></a>
+<button aria-controls="site-links" aria-expanded="false" class="menu" type="button">Menu</button>
+</div></div></header>
+<main id="top">
+<section aria-label="Featured AGOS products" class="hero">
+<div aria-label="Two explorers beside a cosmic lake, one seated on shore and one paddleboarding beneath a giant blue planet" class="hero-bg" role="img"></div>
+<div class="wrap">
+<div class="hero-content">
+<div class="eyebrow">AGOS LLC · Family-run studio</div>
+<h1>Ideas in motion.<span>From flow to form.</span></h1>
+<p>Original games to get lost in. Practical apps to make things clearer. Fingularity, Starfall, TACH, and FREE-UP are now on Google Play. Built with care by our family-run California studio.</p>
+<div class="hero-actions">
+<a class="button primary" href="#products">Explore our apps <span>→</span></a>
+<a class="button ghost" href="https://play.google.com/store/apps/details?id=com.agosllc.fingularity" rel="noopener noreferrer" target="_blank">Fingularity on Google Play →</a>
+<a class="button ghost" href="#forge">See what’s in the Forge</a>
+</div>
+<div class="hero-note">Independent · family-run · built in California</div>
+</div>
+</div>
+<div class="scroll-note">Explore the games and apps below ↓</div>
+<div aria-hidden="true" class="freeup-hero-slide"><div class="wrap freeup-hero-inner"><img alt="" class="freeup-hero-icon" src="/assets/free-up/app-icon-512.png"/><div><div class="eyebrow">NEW FROM AGOS LLC · ANDROID &amp; IPHONE AVAILABLE NOW</div><h2>FREE-<em>UP</em></h2><div class="freeup-subtitle">Free your space. Not your wallet.</div><p>Find duplicate photos, similar shots, large videos, and screenshots. You review and choose what to remove — privately, on your device.</p><div class="freeup-hero-tags"><span>100% free</span><span>No subscriptions</span><span>No ads</span><span>No tracking</span></div><div class="hero-actions"><a class="button primary" href="https://play.google.com/store/apps/details?id=com.agosllc.freeup" rel="noopener noreferrer" target="_blank">Get FREE-UP on Google Play →</a><a class="button ghost" href="/free-up/">Explore FREE-UP →</a><a class="button ghost" href="https://apps.apple.com/us/app/free-up-photo-storage-cleaner/id6826870878" rel="noopener noreferrer" target="_blank">Get FREE-UP on the App Store →</a></div><div class="hero-note">Available now on Google Play and the App Store</div></div></div></div>
+<div aria-hidden="true" class="agos-product-slide" data-product="tach"><div class="wrap"><div class="agos-slide-panel"><div class="eyebrow">AGOS LLC · DEVICE HEALTH</div><h2>TACH: Device Health Monitor</h2><p>Device health, storage, security, and hardware information in four focused views.</p><div class="agos-slide-status"><span class="released">Android · Available now</span><span>iPhone · In App Store review</span></div><div class="hero-actions"><a class="button primary" href="https://play.google.com/store/apps/details?id=com.agosforge.tach" rel="noopener noreferrer" target="_blank">Get TACH on Google Play →</a><a class="button ghost" href="/tach/">Explore TACH →</a></div></div></div></div>
+<div aria-hidden="true" class="agos-product-slide" data-product="starfall"><div class="wrap"><div class="agos-slide-panel"><div class="eyebrow">TEAM SINIGANG · SPACE ACTION</div><h2>Starfall: Shattered Continuum</h2><p>Fight through a cosmic campaign, unlock ships, and face escalating bosses.</p><div class="agos-slide-status"><span class="released">Android · Available now</span><span>iPhone · In App Store review</span></div><div class="hero-actions"><a class="button primary" href="https://play.google.com/store/apps/details?id=com.agosllc.starfallcontinuum" rel="noopener noreferrer" target="_blank">Get Starfall on Google Play →</a><a class="button ghost" href="/starfall/">Explore Starfall →</a></div></div></div></div>
+<div aria-hidden="true" class="agos-product-slide" data-product="fingularity"><div class="wrap"><div class="agos-slide-panel"><div class="eyebrow">TEAM SINIGANG · COSMIC ARCADE</div><h2>Fingularity</h2><p>One finger against black holes, bosses, fleets, and a universe in motion.</p><div class="agos-slide-status"><span class="released">Android · Available now</span><span class="released">iPhone · Out now</span></div><div class="hero-actions"><a class="button primary" href="https://play.google.com/store/apps/details?id=com.agosllc.fingularity" rel="noopener noreferrer" target="_blank">Get on Google Play →</a><a class="button ghost" href="https://apps.apple.com/us/app/fingularity/id6817209627" rel="noopener noreferrer" target="_blank">Get on the App Store →</a></div></div></div></div>
+<div aria-label="Homepage hero slides" class="agos-hero-controls"><button aria-label="Show original AGOS hero" aria-pressed="true" class="agos-hero-dot active" type="button"></button><button aria-label="Show FREE-UP hero" aria-pressed="false" class="agos-hero-dot" type="button"></button><button aria-label="Show TACH hero" aria-pressed="false" class="agos-hero-dot" type="button"></button><button aria-label="Show Starfall hero" aria-pressed="false" class="agos-hero-dot" type="button"></button><button aria-label="Show Fingularity hero" aria-pressed="false" class="agos-hero-dot" type="button"></button><button aria-label="Pause hero rotation" class="agos-hero-pause" type="button">Pause</button></div>
+</section>
+<section class="products" id="products"><div class="wrap">
+<div class="products-head reveal"><div><div class="eyebrow">Apps &amp; games</div><h2 class="section-title">Meet the lineup.</h2></div><p class="section-copy">Discover our games and practical utilities. FREE-UP and Fingularity are available on both Google Play and the App Store; TACH and Starfall are available on Google Play, with iPhone versions in App Store review.</p></div>
+<div class="product-grid">
+<article class="product-card reveal freeup-product-card"><div class="product-image"><img alt="FREE-UP by AGOS LLC celestial app artwork" height="500" loading="lazy" src="/assets/free-up/feature-banner-1024x500.png" width="1024"/></div><div class="product-body"><div class="product-brand">AGOS utility · Available on Android, iPhone &amp; iPad</div><h3>FREE-UP: Photo Storage Cleaner</h3><p>Find duplicate photos, similar shots, large videos, and old screenshots. Always free. Nothing deleted without your approval.</p><div class="product-links"><a class="product-link" href="https://play.google.com/store/apps/details?id=com.agosllc.freeup" rel="noopener noreferrer" target="_blank">Get on Google Play →</a><a class="product-link" href="/free-up/">Explore FREE-UP →</a><a class="product-link" href="https://apps.apple.com/us/app/free-up-photo-storage-cleaner/id6826870878" rel="noopener noreferrer" target="_blank">Get on the App Store →</a></div><div class="product-meta"><span class="chip" style="border-color:rgba(117,229,180,.55);color:#98f5c5">iPhone &amp; iPad · Available now</span><span class="chip" style="border-color:rgba(117,229,180,.55);color:#98f5c5">Android · Available now</span></div></div></article>
+<article class="product-card reveal"><div class="product-image"><img alt="TACH device information interface" height="900" loading="lazy" src="/assets/tach-ui.webp" width="1440"/></div><div class="product-body"><div class="product-brand">AGOS utility</div><h3>TACH: Device Health Monitor</h3><p>Device health, storage, security, and hardware information in four focused views.</p><div class="product-links"><a class="product-link" href="https://play.google.com/store/apps/details?id=com.agosforge.tach" rel="noopener" target="_blank">Get TACH on Google Play →</a><a class="product-link" href="/tach/">Explore TACH →</a></div><div class="product-meta"><span class="chip" style="border-color:rgba(117,229,180,.55);color:#98f5c5">Android · Available now</span><span class="chip">iPhone · In App Store review</span></div></div></article>
+<article class="product-card reveal"><div class="product-image starfall"><img alt="Starfall: Shattered Continuum game artwork" height="500" loading="lazy" src="/assets/launch/starfall-feature.png" width="1024"/></div><div class="product-body"><div class="product-brand">Team Sinigang game</div><h3>Starfall: Shattered Continuum</h3><p>Dodge enemy fire, earn your fleet, and face cosmic bosses across a 200-level space campaign.</p><div class="product-links"><a class="product-link" href="https://play.google.com/store/apps/details?id=com.agosllc.starfallcontinuum" rel="noopener" target="_blank">Get Starfall on Google Play →</a><a class="product-link" href="/starfall/">Explore Starfall →</a></div><div class="product-meta"><span class="chip" style="border-color:rgba(117,229,180,.55);color:#98f5c5">Android · Available now</span><span class="chip">iPhone · In App Store review</span></div></div></article>
+<article class="product-card reveal"><div class="product-image"><img alt="Fingularity celestial game artwork" height="625" loading="lazy" src="/assets/fingularity.jpg" width="1200"/></div><div class="product-body"><div class="product-brand">Team Sinigang game</div><h3>Fingularity</h3><p>One finger against black holes, bosses, fleets, and a universe in motion.</p><div class="product-links"><a class="product-link" href="https://play.google.com/store/apps/details?id=com.agosllc.fingularity" rel="noopener noreferrer" target="_blank">Get on Google Play →</a><a class="product-link" href="https://apps.apple.com/us/app/fingularity/id6817209627" rel="noopener" target="_blank">Get it on the App Store →</a><a class="product-link" href="https://www.teamsinigang.com/games/fingularity.html" rel="noopener" target="_blank">Play on the web →</a></div><div class="product-meta"><span class="chip" style="border-color:rgba(117,229,180,.55);color:#98f5c5">Android · Available now</span><span class="chip" style="border-color:rgba(117,229,180,.55);color:#98f5c5">iPhone · Out now</span><span class="chip">Web</span></div></div></article>
+</div><p class="fine-print" style="margin:26px 0 0;color:#aab8cf">FREE-UP and Fingularity are available on Android and iPhone. TACH and Starfall are available on Google Play; their iPhone versions remain under App Store review. Store links take you directly to their official listings.</p></div></section>
+<section class="intro" id="about">
+<div class="wrap intro-grid reveal">
+<div class="intro-stat">
+<strong>One parent studio.</strong>
+          Original games. Practical apps.<br/>
+          Ideas taking shape in the Forge.
+        </div>
+<div>
+<div class="eyebrow">The mothership</div>
+<h2>Small studio.<br/>Big horizons.</h2>
+<p>AGOS LLC creates games with personality and apps with a clear purpose. From Fingularity’s celestial challenges to Starfall’s space battles and TACH’s device information, each product starts with something we want to make useful, enjoyable, and worth returning to.</p>
+<p>We build, test, and refine together. New concepts have room to develop at Agos Forge, while this site brings our main products, support, and press information together.</p>
+</div>
+</div>
+</section>
+<section class="studio-workshop" id="brands"><div class="wrap studio-links">
+<div class="studio-panel reveal"><div class="eyebrow">Around the studio</div><h2>Team Sinigang</h2><p>Our home for games, anime, and Filipino-rooted culture. Discover more of the people and stories behind our games.</p><a class="product-link" href="https://www.teamsinigang.com/" rel="noopener" target="_blank">Visit Team Sinigang →</a></div>
+<div class="studio-panel reveal" id="forge"><div class="eyebrow">Agos Forge · The workshop</div><h2>In the Forge</h2><p>New ideas taking shape—from family tools to experimental games. Explore what we’re building at Agos Forge.</p><a class="product-link" href="https://www.agosforge.com/#in-the-forge" rel="noopener" target="_blank">Explore Agos Forge →</a><div class="workshop-project"><span class="chip">In development</span><h3>EverydayKeep</h3><p>Exploring simpler ways to organize family routines and shared everyday tasks.</p><a href="https://www.everydaykeep.com/" rel="noopener" target="_blank">Preview the project →</a></div></div>
+</div></section>
+<section class="build" id="build">
+<div class="wrap build-grid reveal">
+<div>
+<div class="eyebrow">How we build</div>
+<h2 class="section-title">Small enough to care about the edges.</h2>
+<p class="section-copy">We don't need every project to become a giant platform. Sometimes the right product is simply a focused thing that does its job well.</p>
+</div>
+<div class="principles">
+<div class="principle"><div class="num">01</div><div><h3>Imagination first.</h3><p>We like ideas with personality — whether that's a singularity eating the screen or a family tool that makes a routine feel easier.</p></div></div>
+<div class="principle"><div class="num">02</div><div><h3>Utility matters.</h3><p>Even our more experimental work has a point. We ask what a person gets from it, not just whether the technology is interesting.</p></div></div>
+<div class="principle"><div class="num">03</div><div><h3>Iterate in the open.</h3><p>We test, revise, and keep improving. The first version is a starting point, not a monument.</p></div></div>
+<div class="principle"><div class="num">04</div><div><h3>Family-run means personal.</h3><p>The studio reflects the things we actually care about: play, technology, family life, and making useful things together.</p></div></div>
+</div>
+</div>
+</section>
+<section class="meaning">
+<div class="wrap">
+<div class="meaning-card reveal">
+<div>
+<div class="eyebrow">Why AGOS?</div>
+<h2>Flow. Current. Movement with direction.</h2>
+<p><strong>Agos</strong> is a Filipino word associated with flow or current. It fits the way this studio works: an idea starts moving, picks up energy, crosses disciplines, and becomes something real. Our games, apps, and experiments are different streams from the same source.</p>
+</div>
+<div class="meaning-aside">
+<strong>Small apps.<br/>Big horizons.</strong>
+<span>Games and practical apps, connected by curiosity and care.</span>
+</div>
+</div>
+</div>
+</section>
+<section class="closing">
+<div class="wrap reveal">
+<div class="eyebrow">From our family to yours</div>
+<h2>Find your next game.<br/>Meet your next useful app.</h2>
+<p>Explore our games and apps, follow the projects taking shape, or get in touch with the people building them.</p>
+<div class="closing-actions">
+<a class="button primary" href="#products">Explore the lineup <span>→</span></a>
+<a class="button ghost" href="/contact/">Contact AGOS LLC</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="agos-unified-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div class="footer-brand">
+<img alt="AGOS LLC" height="146" src="/assets/press/agos-logo-transparent.png" width="700"/>
+<p>Original games and practical apps from a family-run California studio.</p>
+</div>
+<div>
+<h4>Studio</h4>
+<ul>
+<li><a href="https://www.teamsinigang.com/" rel="noopener" target="_blank">Team Sinigang</a></li>
+<li><a href="https://www.agosforge.com/" rel="noopener" target="_blank">Agos Forge</a></li>
+<li><a href="#forge">In the Forge</a></li>
+</ul>
+</div>
+<div>
+<h4>AGOS</h4>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="/free-up/">FREE-UP</a></li><li><a href="/tach/">TACH</a></li><li><a href="/starfall/">Starfall</a></li><li><a href="#products">All apps &amp; games</a></li>
+<li><a href="/press/">Press</a></li>
+<li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4>Legal</h4>
+<ul>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/terms/">Terms</a></li>
+<li><button class="agos-cookie-open" data-agos-cookie-settings="" hidden="" type="button">Cookie settings</button></li>
+</ul>
+</div>
+</div>
+<div class="legal">
+<span>© 2026 AGOS LLC. All rights reserved.</span>
+<span>Independent · family-run · built in California</span>
+</div>
+</div>
+</footer>
+<script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('show'));
+    }
+  </script>
+<script defer="" src="/assets/refresh/contact-header-v2.js"></script><script id="agos-hero-rotation">(function(){const hero=document.querySelector('.hero'),dots=[...document.querySelectorAll('.agos-hero-dot')],pause=document.querySelector('.agos-hero-pause'),slides=[...document.querySelectorAll('.freeup-hero-slide,.agos-product-slide')];if(!hero||dots.length!==5)return;let index=0,paused=false,timer;const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;function show(i){index=i;hero.dataset.slide=String(i);hero.classList.toggle('freeup-active',i===1);dots.forEach((d,n)=>{d.classList.toggle('active',n===i);d.setAttribute('aria-pressed',String(n===i))});slides.forEach((slide,n)=>slide.setAttribute('aria-hidden',String(n!==i-1)))}function stop(){clearInterval(timer)}function start(){stop();if(!paused&&!reduce)timer=setInterval(()=>{if(document.visibilityState==='visible')show((index+1)%5)},8500)}dots.forEach((d,n)=>d.addEventListener('click',()=>{show(n);start()}));pause.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?'Play':'Pause';pause.setAttribute('aria-label',paused?'Resume hero rotation':'Pause hero rotation');start()});hero.addEventListener('mouseenter',stop);hero.addEventListener('mouseleave',start);hero.addEventListener('focusin',stop);hero.addEventListener('focusout',start);document.addEventListener('visibilitychange',start);show(0);start()})();</script></body>
+</html>

@@ -1,0 +1,1 @@
+Fingularity on Google Play update, 2026-10-28. Updated original homepage hero text and added official Google Play CTA, added direct Google Play button and green live Android status to Fingularity card, refreshed homepage release summary. Original hero artwork, FREE-UP rotating slide, all other pages, and contact routing preserved. Based on 2026-10-26 v4 package. Not deployed.

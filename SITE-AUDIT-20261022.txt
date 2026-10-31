@@ -1,0 +1,16 @@
+AGOS site consistency audit — October 22, 2026
+
+The public pages could not be fetched, so these changes are based on the most recent saved full-site ZIP and restored Press HTML.
+
+Standardized the global header and footer on every HTML page in the package; added a shared responsive footer stylesheet. Preserved page bodies, Google Play direct links, GA4/cookie consent assets, and October 21 privacy policy. Restored Press from the saved Press backup.
+
+Files reviewed:
+ - contact/index.html : replaced footer
+ - index.html : replaced footer
+ - press/index.html : replaced footer
+ - privacy/index.html : replaced footer
+ - starfall/index.html : replaced footer
+ - tach/index.html : replaced footer
+ - terms/index.html : replaced footer
+
+Deployment: back up your live site first. Upload the contents of this ZIP to the site root, retaining folders. The home page and all page HTML files are included, but differences between this archive and any changes made on your live site after the snapshot may still exist.

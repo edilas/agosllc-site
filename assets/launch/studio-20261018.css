@@ -1,0 +1,40 @@
+/* Product focus and the studio workshop — October 2026 */
+:focus-visible{outline:3px solid #61e6ff;outline-offset:5px}
+[id]{scroll-margin-top:110px}
+.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.product-card{display:flex;flex-direction:column;min-width:0}
+.product-body{display:flex;flex-direction:column;flex:1}
+.product-body p{min-height:0}
+.product-body .product-meta{margin-top:auto;padding-top:20px}
+.product-links{display:flex;gap:12px 18px;flex-wrap:wrap;margin-bottom:8px}
+.chip{color:#b2c6e0;line-height:1.5}
+.chip.pending{color:#f2c48a;border-color:rgba(255,177,104,.3);background:rgba(255,177,104,.06)}
+.product-image.starfall{aspect-ratio:16/10;display:grid;place-items:center;background:#030913}
+.product-image.starfall img{object-fit:contain}
+.products-head{grid-template-columns:1.1fr .9fr}
+.studio-workshop{padding:70px 0 85px;border-bottom:1px solid var(--line)}
+.studio-links{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px}
+.studio-panel{padding:30px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(17,35,67,.65),rgba(8,17,35,.7));min-width:0}
+.studio-panel h2{font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.15;letter-spacing:-.035em;margin:14px 0}
+.studio-panel p{color:var(--muted);font-size:.95rem}
+.workshop-project{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.workshop-project h3{margin:0 0 8px;font-size:1.2rem}
+.workshop-project .chip{display:inline-block;margin-bottom:12px}
+.workshop-project a{color:#b9dcff;text-underline-offset:4px}
+.release-note{margin:0 0 24px;padding:16px 20px;border-left:2px solid #ffb168;color:#bed0e6;background:rgba(255,177,104,.04);font-size:.9rem}
+.page-hero-art{margin:25px 0;border:1px solid var(--line);border-radius:20px;overflow:hidden;max-width:1024px;background:#030913}
+.page-hero-art img{width:100%;height:auto}
+.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:24px 0}
+.feature-grid h3{margin:0 0 12px;font-size:1.08rem}
+.feature-grid p{font-size:.93rem;margin:0}
+.faq{border-top:1px solid var(--line);padding:18px 0}
+.faq summary{font-weight:600;cursor:pointer}
+.faq p{font-size:.94rem}
+.links{gap:22px}
+@media(max-width:1100px){.nav-right .button{display:none}}
+@media(max-width:980px){.product-grid{grid-template-columns:1fr}.product-card{max-width:700px;width:100%;margin-inline:auto}.studio-links,.products-head{grid-template-columns:1fr}.product-body p{min-height:0}}
+@media(max-width:760px){.feature-grid{grid-template-columns:1fr}.studio-workshop{padding-block:55px}.studio-panel{padding:24px}.links{gap:4px}.products-head{gap:12px}}
+
+.agos-site-header .links{gap:22px}
+@media(max-width:1100px){.agos-site-header .nav-right .button{display:none}}
+@media(max-width:760px){.agos-site-header .links{gap:4px}}
