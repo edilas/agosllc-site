@@ -383,6 +383,34 @@
 .hero .scroll-note{bottom:78px}
 @media(max-width:720px){.freeup-hero-inner{display:block;padding:85px 0 80px}.freeup-hero-icon{width:75px}.freeup-hero-inner h2{font-size:3.6rem}.hero .freeup-hero-slide{overflow-y:auto}.freeup-hero-inner p{font-size:.95rem}}
 @media(prefers-reduced-motion:reduce){.hero .freeup-hero-slide,.hero>.wrap,.hero>.scroll-note{transition:none}}
+<style id="agos-lineup-refresh">
+/* AGOS lineup refresh — balanced two-by-two cinematic storefront */
+.products{position:relative;isolation:isolate;padding:110px 0 112px;background:radial-gradient(ellipse at 15% 25%,rgba(37,101,189,.15),transparent 55%),radial-gradient(ellipse at 85% 75%,rgba(95,57,180,.12),transparent 55%),#060d1c}
+.products-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;max-width:810px;margin:0 auto 45px}
+.products-head .eyebrow{color:#89dfff;letter-spacing:.2em}
+.products-head .section-title{margin:0;font-size:clamp(2.25rem,4.4vw,3.65rem)}
+.products-head .section-copy{max-width:640px;margin:0;color:#b8c9e1;line-height:1.75}
+.products .product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+.products .product-card{--accent:90,200,249;position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid rgba(var(--accent),.27);border-radius:25px;background:linear-gradient(160deg,rgba(18,33,62,.96),rgba(6,14,30,.98));box-shadow:0 15px 40px rgba(0,0,0,.18);transition:transform .26s ease,border-color .26s ease,box-shadow .26s ease}
+.products .product-card:nth-child(2){--accent:89,214,207}
+.products .product-card:nth-child(3){--accent:155,130,254}
+.products .product-card:nth-child(4){--accent:231,135,251}
+.products .product-card:hover{transform:translateY(-6px);border-color:rgba(var(--accent),.65);box-shadow:0 22px 60px rgba(0,0,0,.35),0 0 34px rgba(var(--accent),.14)}
+.products .product-image{position:relative;aspect-ratio:16/9;flex-shrink:0;background:#0a1730}
+.products .product-image:after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(0deg,rgba(6,14,30,.5),transparent);pointer-events:none}
+.products .product-image img{width:100%;height:100%;object-fit:cover}
+.products .product-body{display:flex;flex:1;flex-direction:column;padding:clamp(22px,3vw,32px)}
+.products .product-brand{color:rgb(var(--accent));font-size:.69rem;letter-spacing:.13em;line-height:1.6}
+.products .product-body h3{font-size:clamp(1.35rem,2.2vw,1.85rem);line-height:1.3;margin:11px 0 12px;min-height:2.6em}
+.products .product-body p{min-height:0;line-height:1.75;color:#b6c7de;margin:0 0 22px}
+.products .product-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.products .product-links .product-link{display:inline-flex;justify-content:center;align-items:center;padding:10px 14px;min-height:42px;border:1px solid rgba(var(--accent),.35);border-radius:11px;background:rgba(var(--accent),.09);font-size:.79rem;line-height:1.35;transition:background .2s,border-color .2s;color:#e6f4ff}
+.products .product-links .product-link:hover{background:rgba(var(--accent),.2);border-color:rgba(var(--accent),.8)}
+.products .product-meta{margin-top:22px;padding-top:18px;border-top:1px solid rgba(164,200,242,.13);display:flex;gap:8px;flex-wrap:wrap}
+.products .product-meta .chip{font-size:.62rem;line-height:1.45;letter-spacing:.045em;text-transform:none}
+.products .fine-print{max-width:850px;margin:26px auto 0!important;text-align:center;line-height:1.75}
+@media(max-width:760px){.products{padding:76px 0 84px}.products-head{margin-bottom:29px}.products .product-grid{grid-template-columns:1fr;gap:18px}.products .product-body h3{min-height:0}.products .product-body{padding:23px}}
+@media(prefers-reduced-motion:reduce){.products .product-card,.products .product-links .product-link{transition:none}.products .product-card:hover{transform:none}}
 </style></head>
 <body>
 <header class="agos-site-header">
@@ -423,7 +451,7 @@
 <div aria-label="Homepage hero slides" class="agos-hero-controls"><button aria-label="Show original AGOS hero" aria-pressed="true" class="agos-hero-dot active" type="button"></button><button aria-label="Show FREE-UP hero" aria-pressed="false" class="agos-hero-dot" type="button"></button><button aria-label="Show TACH hero" aria-pressed="false" class="agos-hero-dot" type="button"></button><button aria-label="Show Starfall hero" aria-pressed="false" class="agos-hero-dot" type="button"></button><button aria-label="Show Fingularity hero" aria-pressed="false" class="agos-hero-dot" type="button"></button><button aria-label="Pause hero rotation" class="agos-hero-pause" type="button">Pause</button></div>
 </section>
 <section class="products" id="products"><div class="wrap">
-<div class="products-head reveal"><div><div class="eyebrow">Apps &amp; games</div><h2 class="section-title">Meet the lineup.</h2></div><p class="section-copy">Discover our games and practical utilities. FREE-UP and Fingularity are available on both Google Play and the App Store; TACH and Starfall are available on Google Play, with iPhone versions in App Store review.</p></div>
+<div class="products-head reveal"><div><div class="eyebrow">Apps &amp; games · The AGOS collection</div><h2 class="section-title">Meet the lineup.</h2></div><p class="section-copy">Four worlds to explore. Original games and useful apps, built with purpose and powered by imagination.</p></div>
 <div class="product-grid">
 <article class="product-card reveal freeup-product-card"><div class="product-image"><img alt="FREE-UP by AGOS LLC celestial app artwork" height="500" loading="lazy" src="/assets/free-up/feature-banner-1024x500.png" width="1024"/></div><div class="product-body"><div class="product-brand">AGOS utility · Available on Android, iPhone &amp; iPad</div><h3>FREE-UP: Photo Storage Cleaner</h3><p>Find duplicate photos, similar shots, large videos, and old screenshots. Always free. Nothing deleted without your approval.</p><div class="product-links"><a class="product-link" href="https://play.google.com/store/apps/details?id=com.agosllc.freeup" rel="noopener noreferrer" target="_blank">Get on Google Play →</a><a class="product-link" href="/free-up/">Explore FREE-UP →</a><a class="product-link" href="https://apps.apple.com/us/app/free-up-photo-storage-cleaner/id6826870878" rel="noopener noreferrer" target="_blank">Get on the App Store →</a></div><div class="product-meta"><span class="chip" style="border-color:rgba(117,229,180,.55);color:#98f5c5">iPhone &amp; iPad · Available now</span><span class="chip" style="border-color:rgba(117,229,180,.55);color:#98f5c5">Android · Available now</span></div></div></article>
 <article class="product-card reveal"><div class="product-image"><img alt="TACH device information interface" height="900" loading="lazy" src="/assets/tach-ui.webp" width="1440"/></div><div class="product-body"><div class="product-brand">AGOS utility</div><h3>TACH: Device Health Monitor</h3><p>Device health, storage, security, and hardware information in four focused views.</p><div class="product-links"><a class="product-link" href="https://play.google.com/store/apps/details?id=com.agosforge.tach" rel="noopener" target="_blank">Get TACH on Google Play →</a><a class="product-link" href="/tach/">Explore TACH →</a></div><div class="product-meta"><span class="chip" style="border-color:rgba(117,229,180,.55);color:#98f5c5">Android · Available now</span><span class="chip">iPhone · In App Store review</span></div></div></article>
